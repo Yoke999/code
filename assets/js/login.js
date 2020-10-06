@@ -54,7 +54,8 @@ $(function () {
         $.post('http://ajax.frontend.itheima.net/api/reguser', data, function (res) {
             // console.log(res);
             if (res.status !== 0) {
-                return layermsg(res.message);
+                return layer.msg(res.message);
+                // console.log(layermsg(res.message));
             }
             layer.msg('注册成功，请登录！');
             $('#link_login').click();
