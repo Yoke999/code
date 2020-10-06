@@ -20,9 +20,30 @@
     <div class="loginAndRegBx">
         <div class="title-box"></div>
         <!-- 登录界面 -->
-        <div class="login-box">1</div>
+        <div class="login-box">
+            <!-- 登陆的表单 -->
+            <form class="layui-form" action="">
+                <!-- 用户名输入框 -->
+                <div class="layui-form-item">
+                    <input type="text" name="title" required lay-verify="required" placeholder="请输入用户名"
+                        autocomplete="off" class="layui-input">
+                </div>
+                <!-- 密码框 -->
+                <div class="layui-form-item">
+                    <input type="password" name="password" required lay-verify="required" placeholder="请输入密码"
+                        autocomplete="off" class="layui-input">
+                </div>
+                <!-- 登录按钮 -->
+                <button type="button" class="layui-btn layui-btn-fluid layui-btn layui-btn-normal">登录</button>
+            </form>
+            <div class="layui-form-item link">
+                <a href="javascript:;" id="link_reg">去注册账号</a>
+            </div>
+        </div>
         <!-- 注册界面 -->
-        <div class="reg-box">2</div>
+        <div class="reg-box">
+            <a href="javascript:;" id="link_login">去登陆</a>
+        </div>
     </div>
 </body>
 
