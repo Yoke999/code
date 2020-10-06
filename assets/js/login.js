@@ -42,4 +42,22 @@ $(function () {
             }
         }
     });
+    var layer = layui.layer;
+    // 监听注册表单的提交时间
+    $('#form_reg').on('submit', function (e) {
+        // 阻止默认的提交行为
+        e.preventDefault();
+        var data = {
+            username: $('#form_reg [name=username]').val(),
+            password: $('#form_reg [name=password]').val(),
+        }
+        $.post('http://ajax.frontend.itheima.net/api/reguser', data, function (res) {
+            // console.log(res);
+            if (res.status !== 0) {
+                return layermsg(res.message);
+            }
+            layer.msg('注册成功，请登录！');
+            $('#link_login').click();
+        })
+    })
 })
