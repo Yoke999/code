@@ -61,4 +61,21 @@ $(function () {
             $('#link_login').click();
         })
     })
+    // 监听登录表单的提交行为
+    $('#form_login').submit(function (e) {
+        e.preventDefault();
+        $.ajax({
+            type: "post",
+            url: "http://ajax.frontend.itheima.net/api/login",
+            data: $(this).serialize(),
+            success: function (res) {
+                if (res.status !== 0) return layer.msg(res.message);
+                layer.msg('登陆成功！');
+                // 将登陆成功的字符串 token 存储到localstorage
+                localStorage.setItem('token', res.token);
+                // 跳转至后台页面
+                location.href = '/index.html';
+            }
+        });
+    })
 })
