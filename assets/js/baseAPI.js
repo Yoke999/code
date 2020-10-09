@@ -9,7 +9,7 @@ $.ajaxPrefilter(function (options) {
         }
     }
     options.complete = function (res) {
-        if (res.responseJSON.status === 1) {
+        if (res.responseJSON.status === 1 && res.responseJSON.message === '身份认证失败！') {
             // 清空本地token
             localStorage.removeItem('token');
             // 跳转值登录页面
